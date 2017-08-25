@@ -1,0 +1,40 @@
+<h1> update product </h1>
+
+<form action="/admin/update/{{ p._id }} " method="post">
+    <input type="text " name="_id" id="_id" value="  " hidden>
+    <div class="form-group">
+        <label for="email">imagePath </label>
+        <input type="text" id="image" value="{{ p.imagePath }}" name="imagePath" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="password">title</label>
+        <input type="text" id="title" name="title" value="{{ p.title }}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="email">description </label>
+        <textarea type="text" id="description" name="description" class="form-control" rows="5">
+                    {{ p.description }}
+                </textarea>
+    </div>
+    <div class="form-group">
+        <label for="password">Price</label>
+        <input type="text" id="Price" name="Price" value=" {{ p.price }}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="password">catagory</label>
+        <input type="text" id="catagory" name="catagory" value=" {{ p.catagory }}" class="form-control">
+    </div>
+    <div class="form-group tumbles">
+        <label for="password">tumbles</label>
+         <button class="add-tumb pull-right" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button> 
+
+         {{# each p.tumbles}} 
+         
+         <input type="text" class="form-control"  name="tumble[{{@index}}]" value=" {{ this }}" >
+         {{/each}}
+
+ 
+    </div>
+        <button type="put" class="btn btn-primary">update product </button>
+
+</form>

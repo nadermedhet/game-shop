@@ -1,0 +1,68 @@
+
+        <link rel='stylesheet' href='/stylesheets/owl.carousel.min.css'/>
+
+    <div class="product-view">
+        
+    <div class="col-sm-6">  
+        
+                    <div class="big-view">
+                        <img src="{{ p.imagePath }}" alt="..." class="img-responsive bigtumb">
+                    </div>
+                    <div class="small-view">
+                        {{# each p.tumbles}}
+                        <img src="{{this}}" class="small-image">
+
+                        {{/each}}
+                    </div>
+                    
+
+    </div>
+
+    <div class="col-sm-6">  
+            <h1 class=" uder-line "> {{p.title}}  </h1>
+            <h2>
+                catagory : {{p.catagory }} 
+            </h2>
+
+        <div class="description"><strong>about game : </strong>{{{ p.description }}}</div>
+         <div class="clearfix">
+            <div class="price "> <strong> you can buy it for :  </strong>${{ p.price }}</div>
+            <br>
+            <br>
+
+            <a href="/add-to-cart/{{ p.id }}" class="btn btn-success  buy" role="button">Add to Shopping Cart  <i class="fa fa-shopping-cart" aria-hidden="true"></i>  </a>
+        </div>
+
+    </div>
+    </div>
+        <div class="row">
+    
+</div>
+<h1>
+    you would like this products also
+</h1>
+<div class="row would like ">
+<div class="owl-carousel owl-theme">
+    {{# each products }}
+
+       
+            <div >
+                
+                    
+                        <a href="/product/{{this._id}}" >
+                    <img src="{{ this.imagePath }}" alt="..." class="img-res">
+                     </a>
+                 
+               
+               
+            </div>
+
+{{/each}}
+</div>
+</div>
+<script src="/js/owl.carousel.min.js"></script>
+
+  
+            
+               
+                
